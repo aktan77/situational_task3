@@ -15,7 +15,7 @@ cd app
 
 # Create requirements.txt file
 sudo cat <<EOF | sudo tee -a requirements.txt
-Flask==2.0.1
+Flask==2.2.2
 Werkzeug==2.2.2
 EOF
 
