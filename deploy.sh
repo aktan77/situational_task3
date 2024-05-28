@@ -14,12 +14,12 @@ sudo systemctl start docker
 cd app
 
 # Create requirements.txt file
-sudo tee <<EOF > requirements.txt
+sudo cat <<EOF | sudo tee -a requirements.txt
 Flask==2.0.1
 EOF
 
 # Create Dockerfile for Flask application
-sudo tee <<EOF > Dockerfile
+sudo cat <<EOF | sudo tee -a Dockerfile
 FROM python:3.8-slim
 
 WORKDIR /app
@@ -33,7 +33,7 @@ CMD ["python", "app.py"]
 EOF
 
 # Create Docker Compose file
-sudo tee <<EOF > docker-compose.yml
+sudo cat <<EOF | sudo tee -a docker-compose.yml
 version: '3'
 services:
   web:
@@ -48,7 +48,7 @@ sudo docker compose up -d
 
 # Configure Nginx
 sudo rm /etc/nginx/sites-enabled/default
-sudo tee <<EOF > /etc/nginx/sites-available/app
+sudo cat <<EOF | sudo tee -a /etc/nginx/sites-available/app
 server {
     listen 80;
     server_name $PUBLIC_IP;
@@ -66,7 +66,6 @@ server {
     ssl_certificate_key /etc/nginx/ssl/selfsigned.key;
 }
 EOF
-
 # Enable the new Nginx configuration
 sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/
 
