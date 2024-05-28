@@ -48,7 +48,7 @@ sudo docker-compose up -d
 
 # Configure Nginx
 sudo rm /etc/nginx/sites-enabled/default
-cat <<EOF > /etc/nginx/sites-available/app
+sudo cat <<EOF > /etc/nginx/sites-available/app
 server {
     listen 80;
     server_name $PUBLIC_IP;
@@ -77,3 +77,4 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/
 # Test and reload Nginx configuration
 sudo nginx -t
 sudo systemctl reload nginx
+
