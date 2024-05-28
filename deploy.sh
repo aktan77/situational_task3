@@ -46,3 +46,34 @@ EOF
 # Build and run Docker container
 sudo docker-compose up -d
 
+# Configure Nginx
+sudo rm /etc/nginx/sites-enabled/default
+cat <<EOF > /etc/nginx/sites-available/yourflaskapp
+server {
+    listen 80;
+    server_name $PUBLIC_IP;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+    }
+
+    listen 443 ssl;
+    ssl_certificate /etc/nginx/ssl/selfsigned.crt;
+    ssl_certificate_key /etc/nginx/ssl/selfsigned.key;
+}
+EOF
+
+# Enable the new Nginx configuration
+sudo ln -s /etc/nginx/sites-available/yourflaskapp /etc/nginx/sites-enabled/
+
+# Generate self-signed SSL certificates
+sudo mkdir -p /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/selfsigned.key -out /etc/nginx/ssl/selfsigned.crt -subj "/CN=$PUBLIC_IP"
+
+# Test and reload Nginx configuration
+sudo nginx -t
+sudo systemctl reload nginx
