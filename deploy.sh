@@ -5,7 +5,7 @@ read -p "Enter the public IP address of the server: " PUBLIC_IP
 
 # Update package list and install necessary packages
 sudo apt update
-sudo apt install -y docker.io docker-compose nginx openssl
+sudo apt install -y docker.io docker-compose-plugin nginx openssl
 
 # Enable and star docker service
 sudo systemctl enable docker
