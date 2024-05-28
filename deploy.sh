@@ -44,7 +44,7 @@ EOF
 
 
 # Build and run Docker container
-sudo docker-compose up -d
+sudo docker compose up -d
 
 # Configure Nginx
 sudo rm /etc/nginx/sites-enabled/default
