@@ -16,7 +16,7 @@ cd app
 # Create requirements.txt file
 sudo cat <<EOF | sudo tee -a requirements.txt
 Flask==3.0.3
-Werkzeug==2.2.2
+Werkzeug==3.0.3
 EOF
 
 # Create Dockerfile for Flask application
