@@ -34,7 +34,6 @@ EOF
 
 # Create Docker Compose file
 sudo cat <<EOF | sudo tee -a docker-compose.yml
-version: '3'
 services:
   web:
     build: .
