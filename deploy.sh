@@ -14,12 +14,12 @@ sudo systemctl start docker
 cd app
 
 # Create requirements.txt file
-cat <<EOF > requirements.txt
+sudo tee <<EOF > requirements.txt
 Flask==2.0.1
 EOF
 
 # Create Dockerfile for Flask application
-cat <<EOF > Dockerfile
+sudo tee <<EOF > Dockerfile
 FROM python:3.8-slim
 
 WORKDIR /app
@@ -33,7 +33,7 @@ CMD ["python", "app.py"]
 EOF
 
 # Create Docker Compose file
-cat <<EOF > docker-compose.yml
+sudo tee <<EOF > docker-compose.yml
 version: '3'
 services:
   web:
@@ -48,7 +48,7 @@ sudo docker-compose up -d
 
 # Configure Nginx
 sudo rm /etc/nginx/sites-enabled/default
-sudo cat <<EOF > /etc/nginx/sites-available/app
+sudo tee <<EOF > /etc/nginx/sites-available/app
 server {
     listen 80;
     server_name $PUBLIC_IP;
