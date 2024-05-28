@@ -48,7 +48,7 @@ sudo docker-compose up -d
 
 # Configure Nginx
 sudo rm /etc/nginx/sites-enabled/default
-cat <<EOF > /etc/nginx/sites-available/yourflaskapp
+cat <<EOF > /etc/nginx/sites-available/app
 server {
     listen 80;
     server_name $PUBLIC_IP;
@@ -68,7 +68,7 @@ server {
 EOF
 
 # Enable the new Nginx configuration
-sudo ln -s /etc/nginx/sites-available/yourflaskapp /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/
 
 # Generate self-signed SSL certificates
 sudo mkdir -p /etc/nginx/ssl
