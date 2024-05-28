@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Prompt for the public IP address
+read -p "Enter the public IP address of the server: " PUBLIC_IP
+
 # Update package list and install necessary packages
 sudo apt update
 sudo apt install -y docker.io docker-compose nginx openssl
@@ -42,3 +45,4 @@ EOF
 
 # Build and run Docker container
 sudo docker-compose up -d
+
