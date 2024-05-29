@@ -1,5 +1,6 @@
 # README
-
+## Link to the video
+https://drive.google.com/uc?id=12IFglsctNerLLgTGpyRTxFC8yVCukd7W&export=download
 ## Overview
 This script sets up a Flask application inside a Docker container, configures Nginx as a reverse proxy, and secures the connection with a self-signed SSL certificate. It automates the process of installing necessary packages, building the Docker environment, and configuring Nginx to serve the Flask application.
 
