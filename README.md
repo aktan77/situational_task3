@@ -141,7 +141,7 @@ This project is licensed under the MIT License. Feel free to use and modify the 
 
 ## Result
 ![image](https://github.com/aktan77/situational_task3/assets/120569380/5dc2a850-57ec-4b8e-a3e6-6c640a63512c)
-![image](https://github.com/aktan77/situational_task3/assets/120569380/cc653eb9-181a-4f00-b2fb-3d9f1001fb63)
+![image](https://github.com/aktan77/situational_task3/assets/120569380/c44d6f8e-36b6-4982-a092-37c1852c1482)
 
 ## File system after script has run
 ![image](https://github.com/aktan77/situational_task3/assets/120569380/1b0e9b1e-0371-413c-9b17-7d82e1732f91)
