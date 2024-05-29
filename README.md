@@ -138,3 +138,10 @@ This script sets up a Flask application inside a Docker container, configures Ng
 
 ## License
 This project is licensed under the MIT License. Feel free to use and modify the script as needed.
+
+## Result
+![image](https://github.com/aktan77/situational_task3/assets/120569380/5dc2a850-57ec-4b8e-a3e6-6c640a63512c)
+![image](https://github.com/aktan77/situational_task3/assets/120569380/cc653eb9-181a-4f00-b2fb-3d9f1001fb63)
+
+## File system after script has run
+![image](https://github.com/aktan77/situational_task3/assets/120569380/1b0e9b1e-0371-413c-9b17-7d82e1732f91)
